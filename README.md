@@ -1,4 +1,4 @@
-# Ethminer-gui for richpool
+# RICHPOOL-MINER
 ### This is a fork of ethminer-gui 
 
 https://github.com/CHFreezer/ethminer-gui
