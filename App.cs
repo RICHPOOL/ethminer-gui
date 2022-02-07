@@ -37,7 +37,7 @@ namespace EthminerGUI
 
             SetWindowLong(Program.HWndConsole, -16, 0x10000000);
             SetParent(Program.HWndConsole, Handle);
-            App_Resize(null, null);
+
             comboBox_pools.Items.Add("us.richpool.net");
             comboBox_pools.Items.Add("eu.richpool.net");
             comboBox_pools.Items.Add("asia.richpool.net");
@@ -69,13 +69,6 @@ namespace EthminerGUI
             }
         }
 
-        private void App_Resize(object sender, EventArgs e)
-        {
-            if (Program.HWndConsole != (IntPtr)0)
-            {
-                MoveWindow(Program.HWndConsole, panel1.Left, panel1.Top, panel1.Width, panel1.Height, true);
-            }
-        }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -125,6 +118,10 @@ namespace EthminerGUI
                 miner.passwd = textBox_password.Text;
                
                 miner.args = textBox_args.Text;
+
+                miner.ton_address = ton_address.Text;
+
+                miner.ton_pool = ton_pool.Text;
                 Configuration.CurrentMiner = miner;
                 Configuration.Save();
 
@@ -214,6 +211,10 @@ namespace EthminerGUI
             textBox_password.Text = Configuration.CurrentMiner.passwd;
             
             textBox_args.Text = Configuration.CurrentMiner.args;
+
+            ton_pool.Text = Configuration.CurrentMiner.ton_pool;
+
+            ton_address.Text = Configuration.CurrentMiner.ton_address;
         }
 
         private void textBox_localMachineName_TextChanged(object sender, EventArgs e)
@@ -226,6 +227,11 @@ namespace EthminerGUI
         {
             Configuration.SelectedIndex = comboBox_miners.SelectedIndex;
             updateComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://richpool.net/blog/7/");
         }
     }
 }

@@ -7,7 +7,7 @@
     <ProjectGuid>{AFC4DB82-77CD-463E-8CC0-5E17B0E083FE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>EthminerGUI</RootNamespace>
-    <AssemblyName>ETHMINER-RICHPOOL</AssemblyName>
+    <AssemblyName>RICHPOOL-MINER</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -150,6 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.ico" />
+    <None Include="Resources\log.png" />
+    <None Include="Resources\rich.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
