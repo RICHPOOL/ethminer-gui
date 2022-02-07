@@ -4,8 +4,9 @@
 https://github.com/CHFreezer/ethminer-gui
 
 * This tool help miners who use Ethminer and Gminer to mine at rochpool  https://richpool.net
-### NEWS Dual Mining Supported!!!
-
+### NEWS Dual Mining Supported!!! ETH + TonCoin is ready!
+*  TON+ETH  Dual mining supported only in LOLminer
+*  Remember to increase the Core Frequency and Power Limit
 
 ![](https://github.com/RICHPOOL/ethminer-gui/blob/master/image.png)
 
