@@ -7,7 +7,8 @@ https://github.com/CHFreezer/ethminer-gui
 ### NEWS Dual Mining Supported!!! ETH + TonCoin is ready!
 *  TON+ETH  Dual mining supported only in LOLminer
 *  Remember to increase the Core Frequency and Power Limit
-*  Update LolMiner 1.44
+*  Update LolMiner 1.46
+
 ![](https://github.com/RICHPOOL/ethminer-gui/blob/master/image.png)
 
 ### System requirements:
