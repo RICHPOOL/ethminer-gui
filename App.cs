@@ -38,11 +38,6 @@ namespace EthminerGUI
             SetWindowLong(Program.HWndConsole, -16, 0x10000000);
             SetParent(Program.HWndConsole, Handle);
 
-            comboBox_pools.Items.Add("us.richpool.net");
-            comboBox_pools.Items.Add("eu.richpool.net");
-            comboBox_pools.Items.Add("asia.richpool.net");
-            comboBox_pools.Items.Add("asia2.richpool.net");
-            comboBox_pools.SelectedIndex = 0;
             Configuration = new Configuration(configFilename);
             Logger.white("Configurations:", Path.GetFullPath(configFilename), "Loaded!");
             Logger.green("Reday!");
@@ -111,7 +106,7 @@ namespace EthminerGUI
                 button_mining.Text = "STOP";
 
                 var miner = Configuration.CurrentMiner;
-                miner.pool =comboBox_pools.SelectedIndex;
+           
                
                 miner.wallet = textBox_wallet.Text;
                
@@ -119,9 +114,7 @@ namespace EthminerGUI
                
                 miner.args = textBox_args.Text;
 
-                miner.ton_address = ton_address.Text;
 
-                miner.ton_pool = ton_pool.Text;
                 Configuration.CurrentMiner = miner;
                 Configuration.Save();
 
@@ -204,7 +197,7 @@ namespace EthminerGUI
 
         void updateComponent()
         {
-            comboBox_pools.SelectedIndex = Configuration.CurrentMiner.pool;
+
           
             textBox_wallet.Text = Configuration.CurrentMiner.wallet;
             
@@ -212,9 +205,6 @@ namespace EthminerGUI
             
             textBox_args.Text = Configuration.CurrentMiner.args;
 
-            ton_pool.Text = Configuration.CurrentMiner.ton_pool;
-
-            ton_address.Text = Configuration.CurrentMiner.ton_address;
         }
 
         private void textBox_localMachineName_TextChanged(object sender, EventArgs e)
@@ -231,7 +221,7 @@ namespace EthminerGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://richpool.net/blog/7/");
+            System.Diagnostics.Process.Start("https://richpool.pro/blog/7/");
         }
     }
 }

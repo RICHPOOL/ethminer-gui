@@ -35,7 +35,6 @@ namespace EthminerGUI
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox_miners = new System.Windows.Forms.ComboBox();
             this.textBox_wallet = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
@@ -46,15 +45,8 @@ namespace EthminerGUI
             this.textBox_localMachineName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button_mining = new System.Windows.Forms.Button();
-            this.comboBox_pools = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ton_address = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ton_pool = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,16 +84,6 @@ namespace EthminerGUI
             this.label1.TabIndex = 3;
             this.label1.Text = "MINER";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "RICHPOOL";
-            // 
             // comboBox_miners
             // 
             this.comboBox_miners.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -127,17 +109,16 @@ namespace EthminerGUI
             // textBox_password
             // 
             this.textBox_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_password.Location = new System.Drawing.Point(477, 32);
+            this.textBox_password.Location = new System.Drawing.Point(119, 32);
             this.textBox_password.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(255, 20);
+            this.textBox_password.Size = new System.Drawing.Size(613, 20);
             this.textBox_password.TabIndex = 11;
-            this.textBox_password.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 60);
+            this.label3.Location = new System.Drawing.Point(6, 61);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
@@ -148,7 +129,7 @@ namespace EthminerGUI
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(400, 35);
+            this.label4.Location = new System.Drawing.Point(7, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 13);
@@ -159,16 +140,17 @@ namespace EthminerGUI
             // 
             this.textBox_args.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_args.Location = new System.Drawing.Point(119, 166);
+            this.textBox_args.Location = new System.Drawing.Point(119, 96);
             this.textBox_args.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_args.Multiline = true;
             this.textBox_args.Name = "textBox_args";
-            this.textBox_args.Size = new System.Drawing.Size(613, 20);
+            this.textBox_args.Size = new System.Drawing.Size(613, 90);
             this.textBox_args.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 172);
+            this.label8.Location = new System.Drawing.Point(10, 132);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
@@ -187,7 +169,7 @@ namespace EthminerGUI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 12);
+            this.label9.Location = new System.Drawing.Point(7, 12);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 13);
@@ -206,85 +188,6 @@ namespace EthminerGUI
             this.button_mining.UseVisualStyleBackColor = true;
             this.button_mining.Click += new System.EventHandler(this.button_mining_Click);
             // 
-            // comboBox_pools
-            // 
-            this.comboBox_pools.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_pools.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_pools.FormattingEnabled = true;
-            this.comboBox_pools.Location = new System.Drawing.Point(119, 32);
-            this.comboBox_pools.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox_pools.Name = "comboBox_pools";
-            this.comboBox_pools.Size = new System.Drawing.Size(231, 21);
-            this.comboBox_pools.TabIndex = 22;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 142);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "TON  ADDRESS ";
-            // 
-            // ton_address
-            // 
-            this.ton_address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ton_address.Location = new System.Drawing.Point(119, 136);
-            this.ton_address.Margin = new System.Windows.Forms.Padding(2);
-            this.ton_address.Name = "ton_address";
-            this.ton_address.Size = new System.Drawing.Size(613, 20);
-            this.ton_address.TabIndex = 24;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 91);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "TON DUAL MINING";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 115);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "TON  POOL";
-            // 
-            // ton_pool
-            // 
-            this.ton_pool.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ton_pool.Location = new System.Drawing.Point(119, 109);
-            this.ton_pool.Margin = new System.Windows.Forms.Padding(2);
-            this.ton_pool.Name = "ton_pool";
-            this.ton_pool.Size = new System.Drawing.Size(613, 20);
-            this.ton_pool.TabIndex = 27;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 201);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(257, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "* TON+ETH  Dual mining supported only in LOLminer";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 229);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(297, 13);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "*  Remember to increase the Core Frequency and Power Limit";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -297,21 +200,18 @@ namespace EthminerGUI
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(743, 273);
+            this.ClientSize = new System.Drawing.Size(735, 265);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.ton_pool);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.ton_address);
-            this.Controls.Add(this.comboBox_pools);
             this.Controls.Add(this.button_mining);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
@@ -322,7 +222,6 @@ namespace EthminerGUI
             this.Controls.Add(this.textBox_wallet);
             this.Controls.Add(this.comboBox_miners);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -344,7 +243,6 @@ namespace EthminerGUI
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_exit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox_miners;
         private System.Windows.Forms.TextBox textBox_wallet;
         private System.Windows.Forms.TextBox textBox_password;
@@ -355,15 +253,8 @@ namespace EthminerGUI
         private System.Windows.Forms.TextBox textBox_localMachineName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_mining;
-        private System.Windows.Forms.ComboBox comboBox_pools;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox ton_address;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox ton_pool;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
 

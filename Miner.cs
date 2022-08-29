@@ -23,7 +23,7 @@ namespace EthminerGUI
         public string ton_pool;
         public string ton_address;
 
-
+        public static string pool_address="auto.richpool.pro:1555";
         string getEthminerPool(string @pool, string @wallet, string @passwd)
         {
             var poolArr = @pool.Split(new string[] { "://" }, StringSplitOptions.None);
@@ -46,12 +46,6 @@ namespace EthminerGUI
                    $"@{url}";
         }
 
-        string getNbminerUser(string @wallet, string @passwd)
-        {
-            return @wallet.Trim() +
-                   (string.IsNullOrWhiteSpace(App.Configuration.LocalMachineName) ? "" : $".{App.Configuration.LocalMachineName}") +
-                   (string.IsNullOrWhiteSpace(@passwd) ? "" : $":{@passwd.Trim()}");
-        }
 
         string getGminerUser(string @wallet)
         {
@@ -59,104 +53,26 @@ namespace EthminerGUI
                    (string.IsNullOrWhiteSpace(App.Configuration.LocalMachineName) ? "" : $".{App.Configuration.LocalMachineName}");
         }
 
-        string getPool()
-        {
-            string [] pools = new string[]{ "us.richpool.net:1555",
-                "eu.richpool.net:1555",
-                "asia.richpool.net:1555",
-                "asia2.richpool.net:1555"
-                };
-            switch (name)
-            {
-                case Name.Ethminer:
-                    return $"-P  stratum2+ssl://{getEthminerPool(pools[pool], wallet, passwd)} ";
-               /**     
-                case Name.LolMiner:
-                    return $"--algo ETHASH --pool  {pools[pool].Trim()}:1555 --user getGminerUser(wallet)";
-                
-                 * "%MyVariable%" --algo ETHASH --pool !POOL! --user !WALLET! --dualmode TONDUAL --dualpool !TONPOOL! --dualuser !TONWALLET! !EXTRAPARAMETERS! --watchdog exit
-            case Name.NBMiner:
-                return $"-o {pool.Trim()} ";
-                **/
-                case Name.GMiner:
-                    return $"--server {pools[pool].Trim()} ";
-                default:
-                    return "";
-            }
-        }
-
-
-        string getWallet()
-        {
-            switch (name)
-            {
-                case Name.Ethminer:
-                    return "";
-                    /*
-                case Name.PhoenixMiner:
-                    return $"-wal {wallet.Trim()} ";
-                case Name.NBMiner:
-                    return $"-u {getNbminerUser(wallet, passwd)} ";
-                    */
-                case Name.GMiner:
-                    return $"--user {getGminerUser(wallet)} ";
-                default:
-                    return "";
-            }
-        }
 
 
 
-
-        string getPassword()
-        {
-            switch (name)
-            {
-                case Name.Ethminer:
-                    return "";
-                    /*
-                case Name.PhoenixMiner:
-                    return string.IsNullOrWhiteSpace(passwd) ? "" : $"-pass {passwd.Trim()} ";
-                case Name.NBMiner:
-                    return "";
-                    */
-                case Name.GMiner:
-                    return string.IsNullOrWhiteSpace(passwd) ? "" : $"--pass {passwd.Trim()} ";
-                default:
-                    return "";
-            }
-        }
 
 
         public string GetFullArgs()
         {
-            string[] pools = new string[]{ "us.richpool.net:1555",
-                "eu.richpool.net:1555",
-                "asia.richpool.net:1555",
-                "asia2.richpool.net:1555"
-                };
+
             var rigname = (string.IsNullOrWhiteSpace(App.Configuration.LocalMachineName) ? "" : $".{App.Configuration.LocalMachineName}");
             switch (name)
             {
                 case Name.Ethminer:
-                    return $"{getPool()}{args.Trim()}";
-                /**
-                    case Name.PhoenixMiner:
-                        return $"{getPool()}{getWallet()}{getWorker()}{getPassword()}" +
-                               $"{getPool2()}{getWallet2()}{getWorker2()}{getPassword2()}" +
-                               $"-coin eth -log 0 -wdog 0 -rmode 0 {args.Trim()}";
-                    case Name.NBMiner:
-                        return $"-a ethash {getPool()}{getWallet()}" +
-                               $"{getPool2()}{getWallet2()}" +
-                               $"--no-watchdog {args.Trim()}";
-                **/
+                    return $"-P  stratum2+ssl://{getEthminerPool(pool_address, wallet, passwd)} {args.Trim()}";
+   
                 case Name.LolMiner:
-                    if (ton_address.Trim() == "") {
-                        return $"--algo ETHASH --pool  stratum+ssl://{pools[pool].Trim()} --user {wallet.Trim()}.{rigname}  --ethstratum ETHV1 --watchdog exit {args} ";
-                    }
-                    return $"--algo ETHASH --pool  stratum+ssl://{pools[pool].Trim()} --user {wallet.Trim()}.{rigname}  --ethstratum ETHV1 --dualmode TONDUAL --dualpool {ton_pool.Trim()} --dualuser {ton_address.Trim()}  --watchdog exit {args} ";
+  
+                        return $"--algo ETHASH --pool  stratum+ssl://{pool_address.Trim()} --user {wallet.Trim()}{rigname} --pass {passwd.Trim()} --ethstratum ETHV1 --watchdog exit {args} ";
+
                 case Name.GMiner:
-                    return $" --algo ethash {getPool()}{getWallet()}{getPassword()}" +
+                    return $" --algo ethash --server {pool_address.Trim()} --user {getGminerUser(wallet)}  --pass {passwd.Trim()} " +
                            " --proto stratum --ssl 1"+
                            $" --watchdog 0 {args.Trim()}";
                 default:
