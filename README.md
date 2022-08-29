@@ -3,13 +3,7 @@
 
 https://github.com/CHFreezer/ethminer-gui
 
-* This tool help miners who use Ethminer and Gminer to mine at rochpool  https://richpool.net
-### NEWS Dual Mining Supported!!! ETH + TonCoin is ready!
-*  TON+ETH  Dual mining supported only in LOLminer
-*  Remember to increase the Core Frequency and Power Limit
-*  Update LolMiner 1.46
-
-![](https://github.com/RICHPOOL/ethminer-gui/blob/master/image.png)
+* This tool help miners who use Ethminer and Gminer to mine at rochpool  https://richpool.pro
 
 ### System requirements:
 
@@ -21,10 +15,8 @@ https://github.com/CHFreezer/ethminer-gui
 
 ### Included
 
-* 1. Gminer-2.72 https://github.com/develsoftware/GMinerRelease/releases
+* 1. Gminer-3.05 https://github.com/develsoftware/GMinerRelease/releases
 * 2. Ethminer-0.18 https://github.com/ethereum-mining/ethminer/releases
-* 3. LOL Miner 1.43 https://github.com/Lolliedieb/lolMiner-releases/releases/tag/1.43
+* 3. LOL Miner 1.54 https://github.com/Lolliedieb/lolMiner-releases/releases/tag/1.43
 
-   * We highly recommend Gminer, it is very stable despite having 0.65% DEVFEE.
-   * Ethminer is not working at some new GPUs on windows.(rx6700, rtx3080ti)
-   * 0.19rc is not stable
+   * We highly recommend Ethminer
