@@ -1,7 +1,8 @@
 # RICHPOOL-MINER
 ### This is a fork of ethminer-gui 
 
-https://github.com/CHFreezer/ethminer-gui
+![image](https://user-images.githubusercontent.com/98405605/187267319-6a26bd50-5fc4-44e0-8822-39bf9821f922.png)
+
 
 * This tool help miners who use Ethminer and Gminer to mine at rochpool  https://richpool.pro
 
